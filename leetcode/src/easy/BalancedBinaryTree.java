@@ -40,7 +40,7 @@ public class BalancedBinaryTree {
         return Math.max(depthL, depthR) + 1;  
     } 
     
-    boolean isBalanced = false;
+    boolean isBalanced = true;
     
     public boolean isBalanced(TreeNode root) {
         if(root == null)
