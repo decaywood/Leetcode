@@ -25,14 +25,31 @@ public class DecodeWays {
     
     
     public int numDecodings(String s) {
+        if(s.isEmpty())
+            return 0;
         
         char before = s.charAt(0);
+        
+        if(s.length() == 1)
+            return canDecode(before) ? 1 : 0;;
+       
         char after = s.charAt(1);
         
-        int consecutive = canDecode(before, after) ? 1 : 0;
-        int single = canDecode(before) ? 1 : 0;
+        int consecutive = 0;
+        int single = 0;
         
-        return countNumber(single, consecutive, 3, s);
+        if(canDecode(before) && canDecode(after) && canDecode(before, after)){
+            consecutive = 1;
+            single = 1;
+        }
+        if(canDecode(before) && !canDecode(after) && canDecode(before, after)){
+             consecutive = 1;
+        }
+        if(canDecode(before) && canDecode(after) && !canDecode(before, after)){
+            single = 1;
+        }
+        
+        return countNumber(single, consecutive, 2, s);
     }
     
     private int countNumber(int single, int consecutive, int cursor, String s){
@@ -86,6 +103,6 @@ public class DecodeWays {
     }
    //960
     public static void main(String[] args) {
-        System.out.println(new DecodeWays().numDecodings("17878977599662377298132516969578441236833255596967132573482281598412163216914566534565"));
+        System.out.println(new DecodeWays().numDecodings("10"));
     }
 }
