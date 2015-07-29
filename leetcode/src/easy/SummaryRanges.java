@@ -2,8 +2,6 @@ package easy;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * @author: decaywood
@@ -16,7 +14,32 @@ import java.util.stream.Stream;
  */
 public class SummaryRanges {
 
+
     public static List<String> summaryRanges(int... nums) {
+
+        if(nums.length == 0) return new ArrayList<>();
+
+        List<String> list = new ArrayList<>();
+        int[] tuple = new int[2];
+        tuple[0] = nums[0];
+        int sequence = nums[0];
+        for (int i = 0; i < nums.length - 1; i++) {
+
+            sequence++;
+            int next = nums[i + 1];
+
+            if (sequence != next) {
+                tuple[1] = nums[i];
+                String str = tuple[0] == tuple[1] ? String.valueOf(tuple[0]) : tuple[0] + "->" + tuple[1];
+                sequence = next;
+            }
+        }
+        return list;
+    }
+
+
+
+   /* public static List<String> summaryRanges(int... nums) {
 
         if(nums.length == 0) return new ArrayList<>();
 
@@ -39,7 +62,7 @@ public class SummaryRanges {
             String[] strs = str.split(",");
             return strs.length == 1 ? strs[0] : strs[0] + "->" + strs[strs.length - 1];
         }).collect(Collectors.toList());
-    }
+    }*/
 
     public static void main(String[] args) {
         List<String> list = summaryRanges(0, 2, 4, 5, 7,8,9,11,14,18,19);
