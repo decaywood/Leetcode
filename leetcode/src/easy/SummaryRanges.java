@@ -17,24 +17,33 @@ public class SummaryRanges {
 
     public static List<String> summaryRanges(int... nums) {
 
-        if(nums.length == 0) return new ArrayList<>();
-
         List<String> list = new ArrayList<>();
+        if(nums.length == 0) return list;
+        if(nums.length == 1) {
+            list.add(String.valueOf(nums[0]));
+        }
+
         int[] tuple = new int[2];
         tuple[0] = nums[0];
-        int sequence = nums[0];
         for (int i = 0; i < nums.length - 1; i++) {
-
-            sequence++;
+            tuple[1] = nums[i];
             int next = nums[i + 1];
-
-            if (sequence != next) {
-                tuple[1] = nums[i];
-                String str = tuple[0] == tuple[1] ? String.valueOf(tuple[0]) : tuple[0] + "->" + tuple[1];
-                sequence = next;
+            count(list, tuple, next);
+            if (i + 1 == nums.length - 1) {
+                tuple[1] = next;
+                list.add(tuple[0] == tuple[1] ? String.valueOf(next) : tuple[0] + "->" + tuple[1]);
             }
         }
         return list;
+    }
+
+    private static void count(List<String> list, int[] tuple, int next) {
+        if (tuple[1] + 1 != next) {
+            String str = tuple[0] == tuple[1] ? String.valueOf(tuple[0]) : tuple[0] + "->" + tuple[1];
+            list.add(str);
+            tuple[0] = next;
+            tuple[1] = next;
+        }
     }
 
 
@@ -65,7 +74,7 @@ public class SummaryRanges {
     }*/
 
     public static void main(String[] args) {
-        List<String> list = summaryRanges(0, 2, 4, 5, 7,8,9,11,14,18,19);
+        List<String> list = summaryRanges( 0, 1, 2);
         for (String s : list) {
             System.out.println(s);
         }
