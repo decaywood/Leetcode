@@ -76,6 +76,21 @@ public class AddAndSearchWord {
         return charNode.search(word.toCharArray(), 0);
     }
 
-
+    public static void main(String[] args) {
+        AddAndSearchWord addAndSearchWord = new AddAndSearchWord();
+        addAndSearchWord.addWord("a");
+        addAndSearchWord.addWord("ab");
+        addAndSearchWord.addWord("a");
+        addAndSearchWord.addWord("add");
+        System.out.println(addAndSearchWord.search("a"));
+        System.out.println(addAndSearchWord.search(".at"));
+        addAndSearchWord.addWord("bat");
+        System.out.println(addAndSearchWord.search(".at"));
+        System.out.println(addAndSearchWord.search("an."));
+        System.out.println(addAndSearchWord.search("a.d."));
+        System.out.println(addAndSearchWord.search("b."));
+        System.out.println(addAndSearchWord.search("a.d"));
+        System.out.println(addAndSearchWord.search("."));
+    }
 
 }

@@ -1,8 +1,8 @@
-package beautyOfProgramming;
+package beautyOfPrograming;
 
 /**
  * @author: decaywood
- * @date: 2015/8/12 17:14
+ * @date: 2015/8/12 18:42
  */
 public class CpuDrawer {
 }
