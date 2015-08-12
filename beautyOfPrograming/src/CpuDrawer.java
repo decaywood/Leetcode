@@ -1,4 +1,4 @@
-package beautyOfPrograming;
+package src;
 
 /**
  * @author: decaywood
