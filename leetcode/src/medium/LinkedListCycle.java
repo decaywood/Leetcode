@@ -1,32 +1,11 @@
 package medium;
 
 
+import dataStructure.ListNode;
+
 public class LinkedListCycle {
 
-    /**
-     * Definition for singly-linked list.
-     * class ListNode {
-     *     int val;
-     *     ListNode next;
-     *     ListNode(int x) {
-     *         val = x;
-     *     }
-     * }
-     */
-    
-    
-    private static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) {
-            val = x;
-            this.next = null;
-        }
-        ListNode(int x, ListNode next) {
-            val = x;
-            this.next = next;
-        }
-    }
+
     
     public boolean hasCycle(ListNode head) {
         if(head == null)

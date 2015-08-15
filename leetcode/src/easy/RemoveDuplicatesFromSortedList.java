@@ -1,6 +1,8 @@
 package easy;
 
 
+import dataStructure.ListNode;
+
 public class RemoveDuplicatesFromSortedList {
 
     /*
@@ -10,30 +12,7 @@ public class RemoveDuplicatesFromSortedList {
      *   Given 1->1->2->3->3, return 1->2->3.
      */
     
-    /**
-     * Definition for singly-linked list.
-     * class ListNode {
-     *     int val;
-     *     ListNode next;
-     *     ListNode(int x) {
-     *         val = x;
-     *     }
-     * }
-     */
-    
-    
-    private static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) {
-            val = x;
-            this.next = null;
-        }
-        ListNode(int x, ListNode next) {
-            val = x;
-            this.next = next;
-        }
-    }
+
     
     
     public ListNode deleteDuplicates(ListNode head) {

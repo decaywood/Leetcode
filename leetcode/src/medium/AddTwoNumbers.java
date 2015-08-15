@@ -1,6 +1,8 @@
 package medium;
 
 
+import dataStructure.ListNode;
+
 public class AddTwoNumbers {
 
     /**
@@ -11,31 +13,10 @@ public class AddTwoNumbers {
      * Input: (2 -> 4 -> 3) + (5 -> 6 -> 4) Output: 7 -> 0 -> 8
      * 
      * Tips:  465 + 342 = 807
-   
-     * Definition for singly-linked list.
-     * class ListNode {
-     *     int val;
-     *     ListNode next;
-     *     ListNode(int x) {
-     *         val = x;
-     *     }
-     * }
      */
     
     
-    private static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) {
-            val = x;
-            this.next = null;
-        }
-        ListNode(int x, ListNode next) {
-            val = x;
-            this.next = next;
-        }
-    }
-    
+
   
     
     private ListNode carryRecursion(ListNode l1, ListNode l2, ListNode head, ListNode tailPrior){

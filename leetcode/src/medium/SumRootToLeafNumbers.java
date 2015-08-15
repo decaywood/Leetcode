@@ -1,5 +1,7 @@
 package medium;
 
+import dataStructure.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,22 +25,8 @@ public class SumRootToLeafNumbers {
      * root-to-leaf path 1->3 represents the number 13.
      * 
      * Return the sum = 12 + 13 = 25.
-    
-     * 
-     * Definition for binary tree
-     * public class TreeNode {
-     *     int val;
-     *     TreeNode left;
-     *     TreeNode right;
-     *     TreeNode(int x) { val = x; }
-     * }
      */
-    private static class TreeNode{
-         int val;
-         TreeNode left;
-         TreeNode right;
-         TreeNode(int x) { val = x; }
-    }
+
     
     public int sumNumbers(TreeNode root) {
         List<Integer> allNumbers = new ArrayList<Integer>();

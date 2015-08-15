@@ -1,5 +1,7 @@
 package easy;
 
+import dataStructure.TreeNode;
+
 /**
  * @author decaywood
  * 
@@ -9,25 +11,13 @@ package easy;
  * 
  * 2015年1月23日
  * 
- * Definition for binary tree
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- * 
+ *
  * 思路：通过递归返回左右子树最短路径，进行判断即可
  * 
  */
 public class MinimumDepthOfBinaryTree {
     
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-    }        
+
     
     public int minDepth(TreeNode root) {
         if(root == null) return 0;

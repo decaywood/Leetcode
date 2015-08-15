@@ -1,5 +1,7 @@
 package easy;
 
+import dataStructure.TreeNode;
+
 /**
  * 2014年11月16日
  * @author decaywood
@@ -20,23 +22,11 @@ package easy;
  *      7    2      1
  *  return true, as there exist a root-to-leaf path 5->4->11->2 which sum is 22.
  *
- * Definition for binary tree
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
  */
 public class PathSum {
 
      
-    private static class TreeNode {
-         int val;
-         TreeNode left;
-         TreeNode right;
-         TreeNode(int x) { val = x; }
-    }
+
     
     public boolean hasPathSum(TreeNode root, int sum) {
         

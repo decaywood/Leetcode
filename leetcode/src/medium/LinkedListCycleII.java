@@ -1,6 +1,8 @@
 package medium;
 
 
+import dataStructure.ListNode;
+
 public class LinkedListCycleII {
 
     /**
@@ -20,24 +22,7 @@ public class LinkedListCycleII {
      * 让指针A回到起始点后，走过一个非环部分长度，指针B走过了相等的长度，也就是n * 环长 - 弧A长，正好回到环的开头。
      */
     
-    /**
-     * Definition for singly-linked list.
-     * class ListNode {
-     *     int val;
-     *     ListNode next;
-     *     ListNode(int x) {
-     *         val = x;
-     *     }
-     * }
-     */
-    
-    private static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) {
-            val = x;
-        }
-    }
+
     
     
     public ListNode detectCycle(ListNode head) {

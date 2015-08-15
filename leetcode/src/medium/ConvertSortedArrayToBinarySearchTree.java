@@ -1,30 +1,11 @@
 package medium;
 
 
+import dataStructure.TreeNode;
+
 public class ConvertSortedArrayToBinarySearchTree {
 
-    
-    /**
-     * Convert Sorted Array to Binary Search Tree
-     * * Definition for binary tree
-     * 
-     * 
-     * public class TreeNode {
-     *     int val;
-     *     TreeNode left;
-     *     TreeNode right;
-     *     TreeNode(int x) { val = x; }
-     * }
-     */
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
 
-        TreeNode(int x) {
-            val = x;
-        }
-    }
     
     private TreeNode buildTree(int[] num, int start, int end){
      

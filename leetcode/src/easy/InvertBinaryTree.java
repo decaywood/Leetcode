@@ -1,5 +1,7 @@
 package easy;
 
+import dataStructure.TreeNode;
+
 /**
  * @author: decaywood
  * @date: 2015/8/7 10:30
@@ -23,22 +25,7 @@ package easy;
  */
 public class InvertBinaryTree {
 
-    /**
-     * Definition for a binary tree node.
-     * public class TreeNode {
-     *     int val;
-     *     TreeNode left;
-     *     TreeNode right;
-     *     TreeNode(int x) { val = x; }
-     * }
-     */
 
-    private static  class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-    }
 
     public TreeNode invertTree(TreeNode root) {
         if(root == null) return root;

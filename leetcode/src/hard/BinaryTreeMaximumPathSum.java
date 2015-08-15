@@ -1,24 +1,11 @@
 package hard;
 
 
+import dataStructure.TreeNode;
+
 public class BinaryTreeMaximumPathSum {
     
-    /**
-     * Definition for binary tree
-     * public class TreeNode {
-     *     int val;
-     *     TreeNode left;
-     *     TreeNode right;
-     *     TreeNode(int x) { val = x; }
-     * }
-     */
-    
-    private static  class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-    }
+
     private static int max = -1*(1<<30);
     public static int getMaxPathSum(TreeNode root) {
         

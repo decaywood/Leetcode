@@ -1,6 +1,7 @@
 package medium;
 
-import java.util.Deque;
+import dataStructure.TreeNode;
+
 import java.util.Stack;
 
  
@@ -22,12 +23,6 @@ import java.util.Stack;
  */
 public class BinarySearchTreeIterator {
     
-    private static class TreeNode{
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-    }
 
     Stack<TreeNode> stack;
     

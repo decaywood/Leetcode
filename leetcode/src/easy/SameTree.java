@@ -1,23 +1,10 @@
 package easy;
 
+import dataStructure.TreeNode;
+
 public class SameTree {
     
-    /**
-     * Definition for binary tree
-     * public class TreeNode {
-     *     int val;
-     *     TreeNode left;
-     *     TreeNode right;
-     *     TreeNode(int x) { val = x; }
-     * }
-     */
-    
-    private static  class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-    }
+
     
    public boolean isSameTree(TreeNode p, TreeNode q) {
        

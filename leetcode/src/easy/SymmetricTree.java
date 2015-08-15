@@ -1,6 +1,8 @@
 package easy;
 
 
+import dataStructure.TreeNode;
+
 /**
  * 2014年11月13日
  * 
@@ -26,24 +28,7 @@ package easy;
  */
 public class SymmetricTree {
     
-    /**
-     * Definition for binary tree
-     * public class TreeNode {
-     *     int val;
-     *     TreeNode left;
-     *     TreeNode right;
-     *     TreeNode(int x) { val = x; }
-     * }
-     */
-     
-    
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-    }
-  
+
     public boolean isSymmetric(TreeNode root) {
         if(root == null) return true;
         return checkSymmetric(root.left, root.right);

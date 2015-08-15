@@ -1,5 +1,7 @@
 package medium;
 
+import dataStructure.TreeNode;
+
 /**
  * @author: decaywood
  * @date: 2015/7/19 12:52
@@ -23,25 +25,7 @@ package medium;
  */
 public class LowestCommonAncestorOfABinaryTree {
 
-    /**
-     * Definition for a binary tree node.
-     * public class TreeNode {
-     *     int val;
-     *     TreeNode left;
-     *     TreeNode right;
-     *     TreeNode(int x) { val = x; }
-     * }
-     */
 
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q)
     {
         if(root == null)

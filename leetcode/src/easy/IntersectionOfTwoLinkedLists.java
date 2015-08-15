@@ -1,5 +1,7 @@
 package easy;
 
+import dataStructure.ListNode;
+
 /**
  * @author decaywood
  * 
@@ -25,28 +27,9 @@ package easy;
  */
 public class IntersectionOfTwoLinkedLists {
     
-    public static void main(String[] args) {
-        ListNode node1 = new ListNode("a1");
-//        node1.append("a2").append("c1").append("c2").append("c3").append("c4").append("c5");
-        ListNode node2 = new ListNode("b1");
-        node2.append("b3").append("b2");
-//        node2.next.next.next = node1.next.next;
-        getIntersectionNode(node1, new ListNode("ss"));
-    }
+
     
-    private static class ListNode{
-        String val;
-        ListNode next;
-        public ListNode(String x) {
-            val = x;
-            next = null;
-        }
-        
-        private ListNode append(String x) {
-            next = new ListNode(x);
-            return next;
-        }
-    }
+
     
     public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         

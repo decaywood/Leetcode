@@ -1,5 +1,7 @@
 package easy;
 
+import dataStructure.TreeNode;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -26,15 +28,7 @@ public class BinaryTreeLevelOrderTraversalII {
      * Definition for binary tree public class TreeNode { int val; TreeNode
      * left; TreeNode right; TreeNode(int x) { val = x; } }
      */
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
 
-        TreeNode(int x) {
-            val = x;
-        }
-    }
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
         
         LinkedList<List<Integer>> list = new LinkedList<List<Integer>>();

@@ -1,5 +1,7 @@
 package easy;
 
+import dataStructure.TreeNode;
+
 /**
  * @author: decaywood
  * @date: 2015/7/19 15:21
@@ -25,25 +27,7 @@ package easy;
  */
 public class LowestCommonAncestorOfABinarySearchTree {
 
-    /**
-     * Definition for a binary tree node.
-     * public class TreeNode {
-     *     int val;
-     *     TreeNode left;
-     *     TreeNode right;
-     *     TreeNode(int x) { val = x; }
-     * }
-     */
 
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if(p.val < root.val && q.val < root.val)

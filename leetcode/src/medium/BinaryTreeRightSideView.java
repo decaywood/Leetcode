@@ -1,5 +1,7 @@
 package medium;
 
+import dataStructure.TreeNode;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -21,27 +23,6 @@ import java.util.Queue;
  * You should return [1, 3, 4].
  */
 public class BinaryTreeRightSideView {
-    /**
-     * Definition for a binary tree node.
-     * public class TreeNode {
-     * int val;
-     * TreeNode left;
-     * TreeNode right;
-     * TreeNode(int x) { val = x; }
-     * }
-     */
-
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
-
 
     public List<Integer> rightSideView(TreeNode root) {
 

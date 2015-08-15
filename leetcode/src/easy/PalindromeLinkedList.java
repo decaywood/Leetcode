@@ -1,5 +1,7 @@
 package easy;
 
+import dataStructure.ListNode;
+
 /**
  * @author: decaywood
  * @date: 2015/7/19 15:24
@@ -12,67 +14,58 @@ package easy;
  */
 public class PalindromeLinkedList {
 
-    /**
-     * Definition for singly-linked list.
-     * public class ListNode {
-     *     int val;
-     *     ListNode next;
-     *     ListNode(int x) { val = x; }
-     * }
-     */
 
-    public static class ListNode {
-        int val;
-        ListNode next;
 
-        ListNode(int x) {
-            val = x;
+    public static boolean isPalindrome(ListNode head) {
+
+        ListNode step = head;
+        ListNode doubleStep = head;
+        while (doubleStep != null && doubleStep.next != null) {
+            step = step.next;
+            doubleStep = doubleStep.next.next;
         }
-
-        public ListNode next(ListNode next) {
-            this.next = next;
-            return this;
+        ListNode tail = reverseNode(step);
+        while (tail != null) {
+            if(tail.val != head.val) return false;
+            tail = tail.next;
+            head = head.next;
         }
-    }
-
-
-    public boolean isPalindrome(ListNode head) {
-
-        if(head == null) return true;
-        if(head.next == null) return true;
-        if(head.next.next.next == null) return head.val == head.next.val;
-
-        ListNode doubleSpeed = head;
-        ListNode middle = head;
-        while (doubleSpeed != null && doubleSpeed.next != null) {
-            middle = middle.next;
-            if (doubleSpeed.next.next != null) {
-                doubleSpeed = doubleSpeed.next.next;
-            } else {
-                break;
-            }
-        }
-
-        ListNode h = head;
-        int value = middle.val + h.val;
-        while (middle != null) {
-            int v1 = middle.val;
-            int v2 = h.val;
-            if (value != v1 + v2) {
-                return false;
-            }
-            middle = middle.next;
-            h = h.next;
-        }
-
         return true;
     }
 
+    public static ListNode reverseNode(ListNode head) {
+        if(head == null || head.next == null) return head;
+        ListNode node1 = head;
+        ListNode node2 = node1.next;
+        ListNode temp = node2.next;
+        node1.next = null;
+        if(temp == null) {
+            node2.next = node1;
+            return node2;
+        }
+        while (node2 != null) {
+            temp = node2.next;
+            node2.next = node1;
+            if(temp == null) return node2;
+            node1 = temp;
+            temp = node2;
+            node2 = node1.next;
+            node1.next = temp;
+        }
+        return node1;
+    }
+
     public static void main(String[] args) {
-        ListNode node = new ListNode(1).next(new ListNode(1).next(new ListNode(0).next(new ListNode(0).next(new ListNode(1)))));
-        ListNode node1 = new ListNode(1).next(new ListNode(3));
-//        node.next = node;
-        System.out.println(new PalindromeLinkedList().isPalindrome(node));
+        int[] s = new int[]{-31900, 22571, -31634, 19735, 13748, 16612, -28299, -16628, 9614, -14444, -14444, 9614, -16628, -31900, 16612, 13748, 19735, -31634, 22571, -28299};
+        ListNode node = new ListNode();
+        ListNode head = node;
+        for (int i = 0; i < s.length; i++) {
+            node.next = new ListNode();
+            node = node.next;
+            node.val = s[i];
+        }
+        head = head.next;
+        System.out.println(isPalindrome(head));
     }
 
 

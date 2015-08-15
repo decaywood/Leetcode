@@ -1,31 +1,11 @@
 package medium;
 
 
+import dataStructure.ListNode;
+
 public class InsertionSortList {
     
-    /**
-     * Definition for singly-linked list.
-     * class ListNode {
-     *     int val;
-     *     ListNode next;
-     *     ListNode(int x) {
-     *         val = x;
-     *         next = null;
-     *     }
-     * }
-     */
-    private static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) {
-            val = x;
-            this.next = null;
-        }
-        ListNode(int x, ListNode next) {
-            val = x;
-            this.next = next;
-        }
-    }
+
     
     private static ListNode insertNode(ListNode before, ListNode after, ListNode preNode){
         ListNode node = after.next;

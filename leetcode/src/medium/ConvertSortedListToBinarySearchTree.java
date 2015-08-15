@@ -1,5 +1,8 @@
 package medium;
 
+import dataStructure.ListNode;
+import dataStructure.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,18 +34,9 @@ import java.util.List;
  */
 public class ConvertSortedListToBinarySearchTree {
 
-     public static class ListNode {
-         int val;
-         ListNode next;
-         ListNode(int x) { val = x; next = null; }
-     }
+
      
-     public class TreeNode {
-         int val;
-         TreeNode left;
-         TreeNode right;
-         TreeNode(int x) { val = x; }
-     }
+
      
      public TreeNode sortedListToBST(ListNode head) {
          

@@ -1,5 +1,7 @@
 package easy;
 
+import dataStructure.TreeNode;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -17,22 +19,7 @@ public class BinaryTreeLevelOrderTraversal {
      * return its level order traversal as: [ [3], [9,20], [15,7] ]
      */
     
-    /**
-     * 
-     * Definition for binary tree
-     * public class TreeNode {
-     *     int val;
-     *     TreeNode left;
-     *     TreeNode right;
-     *     TreeNode(int x) { val = x; }
-     * }
-     */
-    private static class TreeNode{
-         int val;
-         TreeNode left;
-         TreeNode right;
-         TreeNode(int x) { val = x; }
-    }
+
     
     /**
      * 层序遍历需要用到队列

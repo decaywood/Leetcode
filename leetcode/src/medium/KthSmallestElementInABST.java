@@ -1,5 +1,7 @@
 package medium;
 
+import dataStructure.TreeNode;
+
 /**
  * @author: decaywood
  * @date: 2015/7/26 11:49
@@ -16,23 +18,6 @@ package medium;
  */
 public class KthSmallestElementInABST {
 
-    /**
-     * Definition for a binary tree node.
-     * public class TreeNode {
-     *     int val;
-     *     TreeNode left;
-     *     TreeNode right;
-     *     TreeNode(int x) { val = x; }
-     * }
-     */
-
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-
-    }
 
     private static class Adder {
         int count;

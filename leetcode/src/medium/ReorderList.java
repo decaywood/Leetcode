@@ -1,36 +1,11 @@
 package medium;
 
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Queue;
+import dataStructure.ListNode;
 
 
 public class ReorderList {
     
-    /**
-     * Definition for singly-linked list.
-     * class ListNode {
-     *     int val;
-     *     ListNode next;
-     *     ListNode(int x) {
-     *         val = x;
-     *     }
-     * }
-     */
-    
-    
-    private static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) {
-            val = x;
-            this.next = null;
-        }
-        ListNode(int x, ListNode next) {
-            val = x;
-            this.next = next;
-        }
-    }
+
     
     private static ListNode reverseList(ListNode head){
         if(head == null && head.next == null)

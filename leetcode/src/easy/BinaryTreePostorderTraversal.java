@@ -1,26 +1,13 @@
 package easy;
 
+import dataStructure.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class BinaryTreePostorderTraversal {
-    /**
-     * 
-     * Definition for binary tree
-     * public class TreeNode {
-     *     int val;
-     *     TreeNode left;
-     *     TreeNode right;
-     *     TreeNode(int x) { val = x; }
-     * }
-     */
-    private static class TreeNode{
-         int val;
-         TreeNode left;
-         TreeNode right;
-         TreeNode(int x) { val = x; }
-    }
+
     
     private List<Integer> list = new ArrayList<Integer>();
     

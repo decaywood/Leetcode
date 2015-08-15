@@ -1,32 +1,11 @@
 package medium;
 
 
+import dataStructure.ListNode;
 
-
-
-
-    public class SortLinkedList {
+public class SortLinkedList {
         
-        /**
-         * Definition for singly-linked list.
-         * class ListNode {
-         *     int val;
-         *     ListNode next;
-         *     ListNode(int x) {
-         *         val = x;
-         *         next = null;
-         *     }
-         * }
-         */
-    
-    private static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) {
-            val = x;
-            this.next = null;
-        }
-    }
+
     
  
     public static ListNode sortList(ListNode head) {
