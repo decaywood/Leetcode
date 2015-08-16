@@ -57,10 +57,10 @@ public class PalindromeLinkedList {
 
     public static void main(String[] args) {
         int[] s = new int[]{-31900, 22571, -31634, 19735, 13748, 16612, -28299, -16628, 9614, -14444, -14444, 9614, -16628, -31900, 16612, 13748, 19735, -31634, 22571, -28299};
-        ListNode node = new ListNode();
+        ListNode node = new ListNode(0);
         ListNode head = node;
         for (int i = 0; i < s.length; i++) {
-            node.next = new ListNode();
+            node.next = new ListNode(0);
             node = node.next;
             node.val = s[i];
         }
