@@ -2,10 +2,7 @@ package medium;
 
 import dataStructure.TreeNode;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * @author: decaywood
@@ -24,34 +21,40 @@ import java.util.Queue;
  */
 public class BinaryTreeRightSideView {
 
+    private final static TreeNode START = new TreeNode(Integer.MAX_VALUE);
+    private final static TreeNode END = new TreeNode(Integer.MIN_VALUE);
     public List<Integer> rightSideView(TreeNode root) {
-
-        List<Integer> res = new ArrayList<>();
-        if (root == null) {
-            return res;
-        }
-        Queue<TreeNode> q = new LinkedList<>();
-        Queue<Integer> level = new LinkedList<>();
-        q.offer(root);
-        level.offer(1);
-        int flag = 0;
-        while (!q.isEmpty()) {
-            TreeNode temp = q.poll();
-            int tempLevel = level.poll();
-            if (tempLevel != flag) {
-                res.add(temp.val);
-                flag++;
-            }
-            if (temp.right != null) {
-                q.offer(temp.right);
-                level.offer(tempLevel + 1);
-            }
-            if (temp.left != null) {
-                q.offer(temp.left);
-                level.offer(tempLevel + 1);
-            }
-        }
-        return res;
+        Deque<TreeNode> deque = new LinkedList<>();
+        List<Integer> list = new ArrayList<>();
+        if(root == null) return list;
+        deque.offer(START);
+        deque.offer(root);
+        deque.offer(END);
+        rightSideView(list, deque);
+        return list;
     }
+
+
+    public static void rightSideView(List<Integer> list, Deque<TreeNode> queue) {
+        boolean isSideViewNext = false;
+        while (true) {
+            TreeNode node = queue.poll();
+            if (isSideViewNext) {
+                list.add(node.val);
+                queue.offer(START);
+                isSideViewNext = false;
+            }
+            if (node == START) isSideViewNext = true;
+
+            if(node.right != null) queue.offer(node.right);
+            if(node.left != null) queue.offer(node.left);
+            if (node == END) break;
+        }
+        queue.offer(END);
+        if(queue.size() > 2) rightSideView(list, queue);
+
+    }
+
+
 
 }
