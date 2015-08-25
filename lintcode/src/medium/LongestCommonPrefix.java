@@ -6,7 +6,6 @@ package medium;
  *
  * Given k strings, find the longest common prefix (LCP).
  *
- * Have you met this question in a real interview? Yes
  * Example
  * For strings "ABCD", "ABEF" and "ACEF", the LCP is "A"
  *

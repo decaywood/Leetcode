@@ -9,7 +9,6 @@ import java.util.Arrays;
  *
  * Given two sorted integer arrays A and B, merge B into A as one sorted array.
  *
- * Have you met this question in a real interview? Yes
  * Example
  * A = [1, 2, 3, empty, empty], B = [4, 5]
  *

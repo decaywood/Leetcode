@@ -11,7 +11,6 @@ import java.util.LinkedList;
  *
  * Invert a binary tree.
  *
- * Have you met this question in a real interview? Yes
  * Example
  *   1         1
  *  / \       / \

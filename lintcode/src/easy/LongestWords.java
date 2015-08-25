@@ -10,7 +10,6 @@ import java.util.Map;
  *
  * Given a dictionary, find all of the longest words in the dictionary.
  *
- * Have you met this question in a real interview? Yes
  * Example
  * Given
  *

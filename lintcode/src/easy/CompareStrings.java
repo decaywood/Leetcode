@@ -11,7 +11,6 @@ import java.util.Map;
  *
  * The characters in string A and B are all Upper Case letters.
  *
- * Have you met this question in a real interview? Yes
  * Example
  * For A = "ABCD", B = "ACD", return true.
  *

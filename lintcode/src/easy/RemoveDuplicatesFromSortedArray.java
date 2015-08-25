@@ -8,7 +8,6 @@ package easy;
  *
  * Do not allocate extra space for another array, you must do this in place with constant memory.
  *
- * Have you met this question in a real interview? Yes
  * Example
  * Given input array A = [1,1,2],
  *

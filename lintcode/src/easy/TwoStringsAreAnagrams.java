@@ -6,7 +6,6 @@ package easy;
  *
  * Write a method anagram(s,t) to decide if two strings are anagrams or not.
  *
- * Have you met this question in a real interview? Yes
  * Example
  * Given s="abcd", t="dcab", return true.
  *

@@ -8,7 +8,6 @@ package easy;
  *
  * The order of elements can be changed, and the elements after the new length don't matter.
  *
- * Have you met this question in a real interview? Yes
  * Example
  * Given an array [0,4,4,0,0,2,4,4], value=4
  *
