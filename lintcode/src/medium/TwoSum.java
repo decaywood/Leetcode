@@ -1,5 +1,8 @@
 package medium;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author: decaywood
  * @date: 2015/8/25 16:47
@@ -28,6 +31,17 @@ package medium;
 public class TwoSum {
 
     public int[] twoSum(int[] numbers, int target) {
+        Map<Integer, Integer> indexMap = new HashMap<>(); // Key : target - currentVal, value : relating Index
+        int[] indexs = new int[2];
+        for (int i = 0; i < numbers.length; i++) {
+            int num = numbers[i];
+            int diff = target - num;
+            if(indexMap.containsKey(diff)) {
+                indexs[0] = indexMap.get(diff) + 1;
+                indexs[1] = i + 1;
+                return indexs;
+            } else indexMap.put(num, i);
+        }
         return numbers;
     }
 
