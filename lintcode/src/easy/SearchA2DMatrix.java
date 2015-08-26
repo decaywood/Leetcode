@@ -31,13 +31,15 @@ public class SearchA2DMatrix {
         if(matrix.length == 0) return false;
         int left = 0;
         int right = matrix.length - 1;
+        int index = 0;
         while (left < right) {
             int middle = (left + right) / 2;
+            if(left + 1 == right || left + 2 == right)
+                index = matrix[right][0] > target ? matrix[middle][0] > target ? left : middle : right;
             int num = matrix[middle][0];
-            left = num < target ? middle : left;
-            right = num < target ? right : middle;
+            left = num < target ? middle + 1 : left;
+            right = num < target ? right : middle - 1;
         }
-        int index = left - 1;
         left = 0;
         right = matrix[index].length - 1;
         while (left < right) {
@@ -51,7 +53,7 @@ public class SearchA2DMatrix {
     }
 
     public static void main(String[] args) {
-        System.out.println(searchMatrix(new int[][]{new int[]{1, 3, 5, 7}, new int[]{10, 11, 16, 20}, new int[]{23, 30, 34, 50}}, 11));;
+        System.out.println(searchMatrix(new int[][]{new int[]{1, 3, 5, 7}, new int[]{10, 11, 16, 20}, new int[]{23, 30, 34, 50}}, 23));;
     }
 
 }
