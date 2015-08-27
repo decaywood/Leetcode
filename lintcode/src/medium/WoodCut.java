@@ -1,5 +1,7 @@
 package medium;
 
+import java.util.Arrays;
+
 /**
  * @author: decaywood
  * @date: 2015/8/26 22:54.
@@ -22,25 +24,27 @@ package medium;
 public class WoodCut {
 
     public static int woodCut(int[] L, int k) {
-        int maxLen = Integer.MIN_VALUE;
-        for (int len : L) maxLen = Math.max(maxLen, len);
-        long left = 0;
-        long right = maxLen;
+        if(L.length == 0) return 0;
+        long sum = 0;
+        for (int i : L) sum += i;
+        if(sum < k) return 0;
+        Arrays.sort(L);
+        long left = 1;
+        long right = L[L.length - 1];
+        if(right < k) return L.length;
         long res = 0;
         while (left <= right) {
             long middle = (left + right) / 2;
             if(middle == 0) break;
             int pieces = calculatePieces(L, middle);
             if(right - left <= 2) {
-                res = pieces == k ? middle : pieces < k ? left : right;
+                res = calculatePieces(L, right) >= k ? right : pieces >= k ? middle : left;
                 break;
             }
-            left = pieces < k ? left : middle + 1;
-            right = pieces < k ? middle - 1 : right;
+            left = pieces < k ? left : middle;
+            right = pieces < k ? middle : right;
         }
-        if(res == 0) return 0;
-        while (calculatePieces(L, res) == k) res++;
-        return (int) res - 1;
+        return (int) res;
     }
 
     private static int calculatePieces(int[] L, long len) {
