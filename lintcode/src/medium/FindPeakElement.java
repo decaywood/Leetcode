@@ -31,15 +31,14 @@ public class FindPeakElement {
     public static int findPeak(int[] A) {
         return findPeak(A, 0, A.length - 1);
     }
-    private static int i = 0;
+
     public static int findPeak(int[] A, int left, int right) {
-        if(left == right)
-            return left;
-        int mid = left + (right-left)/2;
-        if(A[mid] > A[mid+1])
+        if(left == right) return left;
+        int mid = (right + left) / 2;
+        if(A[mid] > A[mid + 1])
             return findPeak(A, left, mid);
         else
-            return findPeak(A, mid+1, right);
+            return findPeak(A, mid + 1, right);
     }
 
     public static void main(String[] args) {
