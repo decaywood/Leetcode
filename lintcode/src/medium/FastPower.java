@@ -13,12 +13,25 @@ package medium;
  *
  * Challenge
  * O(logn)
- *
  */
 public class FastPower {
 
     public static int fastPower(int a, int b, int n) {
-        return 0;
+        if (n == 0) return 1 % b;
+        return fastPowerRecur(a, b, n);
+    }
+
+
+    public static int fastPowerRecur(int a, int b, int n) {
+        if (n == 1) return a % b;
+        long temp = fastPowerRecur(a, b, n / 2);
+        temp = temp * temp % b;
+        return (n % 2 == 0) ? (int) temp : (int) (temp * a % b);
+    }
+
+
+    public static void main(String[] args) {
+        System.out.println(fastPower(2, 3, 31));
     }
 
 
