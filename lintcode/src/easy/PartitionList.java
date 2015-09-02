@@ -18,13 +18,31 @@ import dataStructure.ListNode;
  */
 public class PartitionList {
 
-    public ListNode partition(ListNode head, int x) {
+    public static ListNode partition(ListNode head, int x) {
         ListNode greaterEqual = new ListNode(0);
         ListNode smaller = new ListNode(0);
-        partition(head, greaterEqual, smaller, x);
+        ListNode smallerTail = partition(head, greaterEqual, smaller, x);
+        smallerTail.next = greaterEqual.next;
+        return smaller.next;
     }
 
-    public ListNode partition(ListNode head, ListNode greaterEqual, ListNode smaller, int x) {
+    public static ListNode partition(ListNode head, ListNode greaterEqual, ListNode smaller, int x) {
+        while (head != null) {
+            if (head.val < x) {
+                smaller.next = head;
+                smaller = smaller.next;
+            } else {
+                greaterEqual.next = head;
+                greaterEqual = greaterEqual.next;
+            }
+            head = head.next;
+        }
+        greaterEqual.next = null;
+        return smaller;
+    }
 
+    public static void main(String[] args) {
+        ListNode head = new ListNode(1, new ListNode(4, new ListNode(3, new ListNode(2, new ListNode(5, new ListNode(2))))));
+        partition(head, 3);
     }
 }
