@@ -15,24 +15,29 @@ import java.util.ArrayList;
  * Challenge
  * O(n) time and O(1) extra space
  *
+ * 思路：同时删除两个元素，如果有一个元素超过半数则必定为candidate
+ *
+ * 例如：[1, 1, 1, 1, 2, 3, 4] 通过计算，1的count至少为1，即为candidate
+ *
  */
 public class MajorityNumber {
 
     public static int majorityNumber(ArrayList<Integer> nums) {
         if(nums == null || nums.size() == 0) return -1;
+        int candidate = nums.get(0);
+        int count = 1;
         for (int i = 1; i < nums.size(); i++) {
-            if (!nums.get(i - 1).equals(nums.get(i)) && !nums.get(i - 1).equals(Integer.MAX_VALUE)) {
-                nums.set(i - 1, Integer.MAX_VALUE);
-                nums.set(i, Integer.MAX_VALUE);
-            }
+            int num = nums.get(i);
+            if(count == 0) candidate = num;
+            if(candidate == num) count++;
+            else count--;
         }
-        for (Integer num : nums) if(num != Integer.MAX_VALUE) return num;
-        return -1;
+        return candidate;
     }
 
     public static void main(String[] args) {
         ArrayList<Integer> nums = new ArrayList<>();
-        int[] arr = new int[]{2,1,2,1,2};
+        int[] arr = new int[]{2,2,2,2,1,1,1,1,1};
         for (int i : arr) nums.add(i);
         System.out.println(majorityNumber(nums));
     }

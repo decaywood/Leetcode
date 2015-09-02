@@ -22,17 +22,7 @@ public class MajorityElement {
         return num[num.length >> 1];
         
     }
-    
-    private void sort(int[] num, int start, int end){
-        
-        if(start >= end) return;
-        
-        int middle = getMiddle(num, start, end);
-        
-        sort(num, start, middle - 1);
-        sort(num, middle + 1, end);
-        
-    }
+
     
     private int getMiddle(int[] num, int start, int end){
         
