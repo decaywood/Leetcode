@@ -22,25 +22,33 @@ public class ConvertSortedListToBinarySearchTree {
         if(head.next == null) return new TreeNode(head.val);
         ListNode right = head;
         while (right.next != null) right = right.next;
-        TreeNode node = buildTree(null, head, right);
+        TreeNode node = buildTree(head, right);
         return node;
     }
 
-    public static TreeNode buildTree(ListNode parent, ListNode leftNode, ListNode rightNode) {
-        ListNode mid = findMid(leftNode, rightNode);
+    public static TreeNode buildTree(ListNode leftNode, ListNode rightNode) {
+        ListNode midPre = findMid(leftNode, rightNode);
+        if (midPre == null) {
+            TreeNode node = new TreeNode(leftNode.val);
+            node.right = new TreeNode(rightNode.val);
+            return node;
+        }
+        ListNode mid = midPre.next;
         TreeNode node = new TreeNode(mid.val);
-        node.left = leftNode.next == mid ? new TreeNode(leftNode.val) : leftNode == mid ? null : buildTree(mid, leftNode, mid);
-        node.right = mid.next != rightNode ? buildTree(mid, mid.next, rightNode) : mid.next == parent ? null : new TreeNode(rightNode.val);
+        node.left = leftNode == midPre ? new TreeNode(midPre.val) : buildTree(leftNode, midPre);
+        node.right = rightNode == mid.next ? new TreeNode(mid.next.val) : buildTree(mid.next, rightNode);
         return node;
     }
 
     private static ListNode findMid(ListNode leftNode, ListNode rightNode) {
         ListNode doubleNode = leftNode;
+        ListNode previous = null;
         while (doubleNode != rightNode && doubleNode.next != rightNode) {
+            previous = leftNode;
             leftNode = leftNode.next;
             doubleNode = doubleNode.next.next;
         }
-        return leftNode;
+        return previous;
     }
 
     public static void main(String[] args) {
