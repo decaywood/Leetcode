@@ -43,8 +43,5 @@ public class MajorityNumberIII {
         return val;
     }
 
-    public static void main(String[] args) {
-        majorityNumber(Arrays.asList(2, 2, 5, 1), 3);
-    }
 
 }

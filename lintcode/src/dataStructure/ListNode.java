@@ -26,6 +26,14 @@ public class ListNode {
         this.next = next;
     }
 
-
+    public static ListNode generateTestCase(int... testcase) {
+        ListNode head = new ListNode(0);
+        ListNode res = head;
+        for (int i : testcase) {
+            head.next = new ListNode(i);
+            head = head.next;
+        }
+        return res.next;
+    }
 
 }

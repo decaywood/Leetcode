@@ -51,10 +51,5 @@ public class SearchForARange {
         } else return list.get(mid) < target ? findEnd(list, mid + 1, right, target) : findEnd(list, left, mid, target);
     }
 
-    public static void main(String[] args) {
-        ArrayList<Integer> arrayList = new ArrayList<>();
-        int[] arr = new int[]{1,3,5,6,8,9};
-        for (int i : arr) arrayList.add(i);
-        searchRange(arrayList, 7);
-    }
+
 }
