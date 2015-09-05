@@ -30,9 +30,4 @@ public class MergeTwoSortedLists {
         if(l1.val < l2.val) mergeTwoLists(head.next, l1.next, l2); else mergeTwoLists(head.next, l1, l2.next);
     }
 
-    public static void main(String[] args) {
-        ListNode head1 = new ListNode(1, new ListNode(3, new ListNode(5, new ListNode(7))));
-        ListNode head2 = new ListNode(2, new ListNode(4, new ListNode(6, new ListNode(8, new ListNode(9, new ListNode(10))))));
-        mergeTwoLists(head1, head2);
-    }
 }

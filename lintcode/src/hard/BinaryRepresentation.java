@@ -44,8 +44,5 @@ public class BinaryRepresentation {
         return decimal.compareTo(zero) == 0 ? strInteger.append(strDecimal.toString()).toString() : "ERROR";
     }
 
-    public static void main(String[] args) {
-        System.out.println(binaryRepresentation("0.5"));
-    }
 
 }

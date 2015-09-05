@@ -45,7 +45,4 @@ public class DeleteDigits {
         return builder.toString();
     }
 
-    public static void main(String[] args) {
-        System.out.println(DeleteDigits("000000000000", 5));
-    }
 }

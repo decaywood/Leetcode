@@ -49,8 +49,5 @@ public class SortList {
         return head.next;
     }
 
-    public static void main(String[] args) {
-        ListNode head = new ListNode(8, new ListNode(7, new ListNode(6, new ListNode(5, new ListNode(4, new ListNode(3, new ListNode(2)))))));
-        ListNode node = sortList(head);
-    }
+
 }

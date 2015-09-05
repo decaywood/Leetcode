@@ -23,8 +23,5 @@ public class RemoveElement {
         return count;
     }
 
-    public static void main(String[] args) {
-        removeElement(new int[]{0,4,4,0,0,2,4,4}, 4);
-    }
 
 }

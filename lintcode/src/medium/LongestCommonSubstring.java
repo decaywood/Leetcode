@@ -45,8 +45,5 @@ public class LongestCommonSubstring {
         return maxLength;
     }
 
-    public static void main(String[] args) {
-        longestCommonSubstring("abccccccccccde", "dbccccccabccde");
-    }
 
 }

@@ -51,9 +51,4 @@ public class MaximalSquare {
         return max*max;
     }
 
-    public static void main(String[] args) {
-        int[][] s = new int[][]{new int[]{1},new int[]{1},new int[]{1},new int[]{1}};
-
-        System.out.println(new MaximalSquare().maxSquare(s));
-    }
 }

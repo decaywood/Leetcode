@@ -21,8 +21,5 @@ public class SingleNumberIII {
         return Arrays.asList(a, b);
     }
 
-    public static void main(String[] args) {
-        singleNumberIII(new int[]{1,2,3,3,2,4,1,5});
-    }
 
 }

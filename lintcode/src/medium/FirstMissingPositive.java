@@ -34,13 +34,4 @@ public class FirstMissingPositive {
     }
 
 
-    public static void main(String[] args) {
-        System.out.println(new FirstMissingPositive().firstMissingPositive(new int[]{-1, 4, 2, 1, 9, 10}));
-        System.out.println(new FirstMissingPositive().firstMissingPositive(new int[]{}));
-        System.out.println(new FirstMissingPositive().firstMissingPositive(new int[]{1}));
-        System.out.println(new FirstMissingPositive().firstMissingPositive(new int[]{-1}));
-        System.out.println(new FirstMissingPositive().firstMissingPositive(new int[]{3, 4, -1, 1}));
-        System.out.println(new FirstMissingPositive().firstMissingPositive(new int[]{2, 2, 2, 2}));
-
-    }
 }

@@ -37,7 +37,4 @@ public class JumpGameII {
         return jump(A, index, stepNum + 1);
     }
 
-    public static void main(String[] args) {
-        System.out.println(jump(new int[]{2,3,1,1,4}));
-    }
 }

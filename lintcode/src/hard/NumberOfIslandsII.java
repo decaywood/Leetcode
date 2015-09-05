@@ -73,20 +73,5 @@ public class NumberOfIslandsII {
         return largeSizeID;
     }
 
-    public static void main(String[] args) {
-        String s = "0,9],[5,4],[0,12],[6,9],[6,5],[0,4],[4,11],[0,0],[3,5],[6,7],[3,12],[0,5],[6,13],[7,5],[3,6],[4,4],[0,8],[3,1],[4,6],[6,1],[5,12],[3,8],[7,0],[2,9],[1,4],[3,0],[1,13],[2,13],[6,0],[6,4],[0,13],[0,3],[7,4],[1,8],[5,5],[5,7],[5,10],[5,3],[6,10],[6,2],[3,10],[2,7],[1,12],[5,0],[4,5],[7,13],[3,2";
-        String[] a = s.split("\\],\\[");
-        Point[] points = new Point[a.length];
-        for (int i = 0; i < a.length; i++) {
-            String[] s2 = a[i].split(",");
-            Point p = new Point(Integer.parseInt(s2[0]), Integer.parseInt(s2[1]));
-            points[i] = p;
-        }
-        List<Integer> list = new NumberOfIslandsII().numIslands2(8, 14, points);
-        for (Integer integer : list) {
-            System.out.println(integer);
-        }
-    }
 
-    
 }

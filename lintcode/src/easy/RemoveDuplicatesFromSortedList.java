@@ -27,9 +27,5 @@ public class RemoveDuplicatesFromSortedList {
         return node;
     }
 
-    public static void main(String[] args) {
-        ListNode node = new ListNode(1, new ListNode(1, new ListNode(1, new ListNode(1, new ListNode(3)))));
-        deleteDuplicates(node);
-    }
 
 }

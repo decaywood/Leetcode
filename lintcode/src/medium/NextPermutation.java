@@ -36,9 +36,6 @@ public class NextPermutation {
         for (k = nums.length - 1; k > i && i >= 0; k--) if (nums[i] < nums[k]) break;
         if (i >= 0) swap(nums, i, k);
         reverse(nums, i + 1, nums.length - 1);
-        for (int num : nums) {
-            System.out.println(num);
-        }
         return nums;
     }
 
@@ -56,7 +53,4 @@ public class NextPermutation {
         }
     }
 
-    public static void main(String[] args) {
-        nextPermutation(new int[]{1,2,1});
-    }
 }

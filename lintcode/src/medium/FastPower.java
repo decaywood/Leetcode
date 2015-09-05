@@ -30,9 +30,6 @@ public class FastPower {
     }
 
 
-    public static void main(String[] args) {
-        System.out.println(fastPower(2, 3, 31));
-    }
 
 
 }

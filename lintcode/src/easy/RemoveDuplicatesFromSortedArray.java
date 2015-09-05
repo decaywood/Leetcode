@@ -26,8 +26,5 @@ public class RemoveDuplicatesFromSortedArray {
         return length;
     }
 
-    public static void main(String[] args) {
-        new RemoveDuplicatesFromSortedArray().removeDuplicates(new int[]{-10, 0, 1,2,3});
-    }
 
 }

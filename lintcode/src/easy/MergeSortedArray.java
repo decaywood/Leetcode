@@ -34,9 +34,4 @@ public class MergeSortedArray {
         }
     }
 
-    public static void main(String[] args) {
-        mergeSortedArray(new int[]{1, 2, 3, 0, 0}, 3, new int[]{4, 5},2);
-
-
-    }
 }

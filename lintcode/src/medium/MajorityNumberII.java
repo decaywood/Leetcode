@@ -53,9 +53,5 @@ public class MajorityNumberII {
         return count1 > count2 ? candidate1 : candidate2;
     }
 
-    public static void main(String[] args) {
-        List<Integer> list = Arrays.asList(1, 2, 2, 2, 1, 1, 3);
-        majorityNumber(list);
-    }
 
 }

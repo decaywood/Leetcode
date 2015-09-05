@@ -29,7 +29,4 @@ public class FlipBits {
         return count;
     }
 
-    public static void main(String[] args) {
-        countBits(120412512);
-    }
 }

@@ -31,7 +31,4 @@ public class FindTheMissingNumber {
         }
         return sum;
     }
-    public static void main(String[] args) {
-        System.out.println(findMissing(new int[]{0,1,3}));
-    }
 }

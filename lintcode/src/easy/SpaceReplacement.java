@@ -38,8 +38,5 @@ public class SpaceReplacement {
         return newLength;
     }
 
-    public static void main(String[] args) {
-        new SpaceReplacement().replaceBlank("hello word".toCharArray(), 2);
-    }
 
 }

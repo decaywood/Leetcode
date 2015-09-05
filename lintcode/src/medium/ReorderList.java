@@ -62,9 +62,5 @@ public class ReorderList {
             t2 = t2.next;
         }
     }
-    public static void main(String[] args) {
-        ListNode head = new ListNode(1, new ListNode(2, new ListNode(3)));
-        reorderList(head);
-    }
 
 }

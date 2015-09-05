@@ -41,8 +41,5 @@ public class Anagrams {
         return list;
     }
 
-    public static void main(String[] args) {
-        anagrams(new String[]{"lint", "intl", "inlt", "code"});
-    }
 
 }

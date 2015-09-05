@@ -33,8 +33,5 @@ public class RemoveDuplicatesFromSortedArrayII {
         return startPosition + 1;
     }
 
-    public static void main(String[] args) {
-        removeDuplicates(new int[]{-8,0,1,2,3});
-    }
 
 }

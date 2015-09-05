@@ -49,8 +49,5 @@ public class UniqueBinarySearchTrees {
         return res;
     }
 
-    public static void main(String[] args) {
-        System.out.println(numTrees(4));
-    }
 
 }

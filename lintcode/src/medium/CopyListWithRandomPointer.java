@@ -44,8 +44,5 @@ public class CopyListWithRandomPointer {
         return res;
     }
 
-    public static void main(String[] args) {
-        copyRandomList(new RandomListNode(0));
-    }
 
 }

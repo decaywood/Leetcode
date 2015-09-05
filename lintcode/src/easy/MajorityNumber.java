@@ -35,11 +35,5 @@ public class MajorityNumber {
         return candidate;
     }
 
-    public static void main(String[] args) {
-        ArrayList<Integer> nums = new ArrayList<>();
-        int[] arr = new int[]{2,2,2,2,1,1,1,1,1};
-        for (int i : arr) nums.add(i);
-        System.out.println(majorityNumber(nums));
-    }
 
 }

@@ -48,11 +48,5 @@ public class PartitionArray {
     }
 
 
-    public static void main(String[] args) {
-        System.out.println(partitionArray(new int[]{6,6,8,6,7,9,8,7,9,6,8,6,8,9,8,7,8,6,7,6,6,8,6,6}, 5));
-        System.out.println(partitionArray(new int[]{9,9,9,8,9,8,7,9,8,8,8,9,8,9,8,8,6,9}, 9));
-        System.out.println(partitionArray(new int[]{3,2,2,1}, 2));
-        System.out.println(partitionArray(new int[]{7, 7, 9, 8, 6, 6, 8, 7, 9, 8, 6, 6}, 10));
-    }
 
 }

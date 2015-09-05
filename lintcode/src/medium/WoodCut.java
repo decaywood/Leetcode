@@ -53,9 +53,6 @@ public class WoodCut {
         return sum;
     }
 
-    public static void main(String[] args) {
-        System.out.println(woodCut(new int[]{232,124,456}, 7));
-        System.out.println(woodCut(new int[]{2147483644,2147483645,2147483646,2147483647}, 4));
-    }
+
 
 }

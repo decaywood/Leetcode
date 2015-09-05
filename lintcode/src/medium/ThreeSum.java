@@ -59,9 +59,6 @@ public class ThreeSum {
         return arrayList;
     }
 
-    public static void main(String[] args) {
-        threeSum(new int[]{-1,1,0});
-    }
 
 
 }

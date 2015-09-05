@@ -39,8 +39,5 @@ public class SubArraySum {
         return res;
     }
 
-    public static void main(String[] args) {
-        subarraySum(new int[]{-9, 1, 2, -3, 4});
-    }
 
 }

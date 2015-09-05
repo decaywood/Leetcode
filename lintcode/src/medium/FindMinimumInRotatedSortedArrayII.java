@@ -33,7 +33,4 @@ public class FindMinimumInRotatedSortedArrayII {
                 : findPivot(num, left + 1, right);
     }
 
-    public static void main(String[] args) {
-        System.out.println(findMin(new int[]{1,1,-1,1}));
-    }
 }

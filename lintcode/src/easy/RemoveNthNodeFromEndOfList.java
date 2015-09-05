@@ -42,8 +42,4 @@ public class RemoveNthNodeFromEndOfList {
         return node.next;
     }
 
-    public static void main(String[] args) {
-        ListNode node = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
-        removeNthFromEnd(node, 1);
-    }
 }

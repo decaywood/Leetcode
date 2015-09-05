@@ -39,8 +39,5 @@ public class JumpGame {
         return previous > 0;
     }
 
-    public static void main(String[] args) {
-        System.out.println(canJump(new int[]{3,2,1,0,4}));
-    }
 
 }
