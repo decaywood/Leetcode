@@ -1,5 +1,9 @@
 package medium;
 
+import dataStructure.UndirectedGraphNode;
+
+import java.util.*;
+
 /**
  * @author: decaywood
  * @date: 2015/9/10 19:05
@@ -29,4 +33,20 @@ package medium;
  *
  */
 public class CloneGraph {
+
+    public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
+        Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<>();
+        return cloneGraph(node, map);
+    }
+    public UndirectedGraphNode cloneGraph(UndirectedGraphNode node, Map<UndirectedGraphNode, UndirectedGraphNode> map) {
+        if(node == null) return null;
+        UndirectedGraphNode graphNode = new UndirectedGraphNode(node.label);
+        map.put(node, graphNode);
+        for (UndirectedGraphNode ugn : node.neighbors) {
+            UndirectedGraphNode n = map.containsKey(ugn) ? map.get(ugn) : cloneGraph(ugn, map);
+            graphNode.neighbors.add(n);
+        }
+        return graphNode;
+    }
+
 }

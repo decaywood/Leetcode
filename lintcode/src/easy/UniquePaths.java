@@ -40,7 +40,7 @@ public class UniquePaths {
             product *= i;
             if(product > divisor && divisor > 1) product /= divisor--;
         }
-            return (int) Math.round(product / (divisor > 0 ? divisor : 1));
+        return (int) Math.round(product / (divisor > 0 ? divisor : 1));
     }
 
 
