@@ -2,6 +2,11 @@ package dataStructure; /**
  * @author: decaywood
  * @date: 2015/8/15 11:25
  */
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.stream.Stream;
+
 /**
  * Given a binary tree, determine if it is height-balanced.
  *
@@ -23,4 +28,34 @@ public class TreeNode {
     public TreeNode left;
     public TreeNode right;
     public TreeNode(int x) { val = x; }
+
+    public TreeNode() {
+        this(0);
+    }
+
+    public static TreeNode generateTestCase(String testcase) {
+        int[] arr = Stream.of(testcase.split(",")).mapToInt(str -> str.equals("#") ? Integer.MIN_VALUE : Integer.parseInt(str)).toArray();
+        TreeNode root = new TreeNode(Integer.MAX_VALUE);
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        for (int val : arr) {
+            TreeNode node = queue.poll();
+            if (val == Integer.MIN_VALUE) continue;
+            node.val = val;
+            node.left = new TreeNode();
+            node.right = new TreeNode();
+            queue.offer(node.left);
+            queue.offer(node.right);
+        }
+        clearNullTreeNode(root);
+        return root;
+    }
+
+    private static void clearNullTreeNode(TreeNode root) {
+        if(root == null) return;
+        if(root.left != null && root.left.val == Integer.MAX_VALUE) root.left = null;
+        if(root.right != null && root.right.val == Integer.MAX_VALUE) root.right = null;
+        clearNullTreeNode(root.left);
+        clearNullTreeNode(root.right);
+    }
 }
