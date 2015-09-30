@@ -7,7 +7,7 @@ import java.util.List;
  * @author: decaywood
  * @date: 2015/9/28 18:30
  *
- * The n-queens puzzle is the problem of placing n queens on an n¡Án
+ * The n-queens puzzle is the problem of placing n queens on an nï¿½ï¿½n
  * chessboard such that no two queens attack each other.
  *
  * Given an integer n, return all distinct solutions to the n-queens puzzle.
@@ -71,7 +71,4 @@ public class NQueens {
         res.add(list);
     }
 
-    public static void main(String[] args) {
-        new NQueens().solveNQueens(8);
-    }
 }
