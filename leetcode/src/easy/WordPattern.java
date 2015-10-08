@@ -40,7 +40,5 @@ public class WordPattern {
         return true;
     }
 
-    public static void main(String[] args) {
-        System.out.println(new WordPattern().wordPattern( "abba", "dog cat cat dog"));
-    }
+
 }

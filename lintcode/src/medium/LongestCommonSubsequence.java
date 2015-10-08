@@ -25,25 +25,20 @@ package medium;
 public class LongestCommonSubsequence {
 
     public int longestCommonSubsequence(String A, String B) {
-        String longStr = A.length() > B.length() ? A : B;
-        String shortStr = A.equals(longStr) ? B : A;
-        int[] dp = new int[longStr.length() + 1];
-        for (int i = 0; i < longStr.length(); i++)
-            dp[i] = shortStr.charAt(0) == longStr.charAt(0) ? 1 : 0;
+        int res = 0;
+        int[][] dp = new int[B.length()][A.length()];
+        for (int i = 0; i < A.length(); i++)
+            dp[0][i] = B.charAt(0) == A.charAt(i) ? 1 : 0;
 
-        for (int i = 1; i < shortStr.length(); i++) {
-            char preShortC = shortStr.charAt(i - 1);
-            char shortC = shortStr.charAt(i);
-            for (int j = 1; j < longStr.length(); j++) {
-                char longC = longStr.charAt(j - 1);
-                if(longC == preShortC)
-                dp[j] = longC == shortC ? dp[j - 1] + 1 : dp[j];
+        for (int i = 1; i < B.length(); i++) {
+            int val = 0;
+            for (int j = 0; j < A.length(); j++) {
+                dp[i][j] = B.charAt(i) == A.charAt(j) ? val + 1 : dp[i - 1][j];
+                val = Math.max(val, dp[i - 1][j]);
+                res = Math.max(res, dp[i][j]);
             }
         }
-        return 1;
+        return res;
     }
 
-    public static void main(String[] args) {
-        new LongestCommonSubsequence().longestCommonSubsequence("BCACBDCAABA", "BCBDACBDCA");
-    }
 }
