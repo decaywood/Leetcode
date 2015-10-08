@@ -1,8 +1,5 @@
 package easy;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * @author: decaywood
  * @date: 2015/8/21 16:41
@@ -26,20 +23,17 @@ public class HappyNumber {
 
 
     public static boolean isHappy(int n) {
-        Set<Integer> set = new HashSet<>();
-        return doTest(set, n);
+        return doTest(n);
     }
 
-    public static boolean doTest(Set<Integer> set, int n) {
-        if(set.contains(n)) return false;
-        set.add(n);
+    public static boolean doTest(int n) {
         int squares = 0;
         while (n > 0) {
             int num = n % 10;
             n /= 10;
             squares += num * num;
         }
-        return squares == 1 || doTest(set, squares);
+        return squares == 1 || (squares >= 10 && doTest(squares));
     }
 
 
