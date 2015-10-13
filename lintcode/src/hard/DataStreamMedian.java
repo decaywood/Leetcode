@@ -1,5 +1,9 @@
 package hard;
 
+import dataStructure.ListNode;
+
+import java.util.*;
+
 /**
  * @author: decaywood
  * @date: 2015/10/13 20:42
@@ -24,28 +28,30 @@ package hard;
  */
 public class DataStreamMedian {
 
-    private static class Tree {
-        Tree left;
-        Tree right;
-        int val;
 
-        public Tree(int val) {
-            this.val = val;
-        }
-    }
-
+    /**
+     * O(n^2)
+     */
     public int[] medianII(int[] nums) {
+        ListNode min = new ListNode(Integer.MIN_VALUE);
         int[] res = new int[nums.length];
-        if(nums.length == 0) return res;
-        Tree heap = new Tree(nums[0]);
-        for (int i = 1; i < nums.length; i++) {
-
+        for (int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            ListNode temp = min;
+            while (temp.next != null && temp.next.val < num) temp = temp.next;
+            ListNode node = new ListNode(num);
+            node.next = temp.next;
+            temp.next = node;
+            temp = min;
+            int count = (i >> 1) + 1;
+            while (count-- > 0) temp = temp.next;
+            res[i] = temp.val;
         }
         return res;
     }
 
     public static void main(String[] args) {
-        new DataStreamMedian().medianII(new int[]{4, 5, 1, 3, 2, 6, 0});
+        new DataStreamMedian().medianII(new int[]{1});
     }
 
 }
