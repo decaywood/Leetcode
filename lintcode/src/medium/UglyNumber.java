@@ -1,12 +1,24 @@
 package medium;
 
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
+
 
 /**
  * @author: decaywood
- * @date: 2015/10/10 20:31.
+ * @date: 2015/10/10 11:30
+ *
+ * Ugly number is a number that only have factors 3, 5 and 7.
+ *
+ * Design an algorithm to find the Kth ugly number. The first 5 ugly numbers are 3, 5, 7, 9, 15 ...
+ *
+ * Have you met this question in a real interview? Yes
+ * Example
+ * If K=4, return 9.
+ *
+ * Challenge
+ * O(K log K) or O(K) time.
+ *
  */
 public class UglyNumber {
 
