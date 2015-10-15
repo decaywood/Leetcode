@@ -1,6 +1,5 @@
 package hard;
 
-import java.util.Arrays;
 import java.util.Deque;
 import java.util.LinkedList;
 
@@ -22,29 +21,29 @@ import java.util.LinkedList;
  * Example
  * Given height = [2,1,5,6,2,3],
  * return 10.
- *
  */
 public class LargestRectangleInHistogram {
 
-  /*  public int largestRectangleArea(int[] height) {
-        if(height == null || height.length == 0) return 0;
-        int[] histogram = new int[height.length + 1];
-        System.arraycopy(height, 0, histogram, 0, height.length);
-        Deque<Integer> deque = new LinkedList<>();
-        int largestArea = 0;
-        for (int i = 0; i < histogram.length;) {
-            if (deque.isEmpty() || histogram[deque.peek()] <= histogram[i]) deque.push(i++);
-            else {
-                int index = deque.pop();
-                largestArea = Math.max(largestArea, (deque.isEmpty() ? i : i - index) * histogram[index]);
-            }
-
+    public int largestRectangleArea(int[] height) {
+        if (height == null || height.length == 0)
+            return 0;
+        Deque<Integer> stack = new LinkedList<>();
+        int res = 0;
+        int i;
+        for (i = 0; i < height.length; ) {
+            if (!stack.isEmpty() && height[stack.peek()] >= height[i]) {
+                int index = stack.pop();
+                int temp = stack.isEmpty() ? i * height[index] : ((i - 1) - (stack.peek() + 1) + 1) * height[index];
+                res = Math.max(res, temp);
+            } else stack.push(i++);
         }
-        return largestArea;
-    }
 
-    public static void main(String[] args) {
-        System.out.println(new LargestRectangleInHistogram().largestRectangleArea(new int[]{5,5,1,7,1,1,5,2,7,6}));
-    }*/
+        while (!stack.isEmpty()) {
+            int index = stack.pop();
+            int temp = stack.isEmpty() ? i * height[index] : (i - stack.peek() - 1) * height[index];
+            res = Math.max(res, temp);
+        }
+        return res;
+    }
 
 }
