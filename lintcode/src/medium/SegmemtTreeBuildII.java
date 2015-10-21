@@ -35,16 +35,6 @@ package medium;
  * which of these points are in a given interval
  * See wiki: Segment Tree Interval Tree
  *
- *
- * �߶�����һ�ö�����������ÿ���ڵ�������������������start��end���ڱ�ʾ�ýڵ�����������䡣
- * start��end�������������������µķ�ʽ��ֵ:
- * ���ڵ�� start �� end �� build ������������
- * ���ڽڵ� A ������ӣ��� start=A.left, end=(A.left + A.right) / 2��
- * ���ڽڵ� A ���Ҷ��ӣ��� start=(A.left + A.right) / 2 + 1, end=A.right��
- * ��� start ���� end, ��ô�ýڵ���Ҷ�ӽڵ㣬���������Ҷ��ӡ�
- * ʵ��һ�� build ���������� start �� end ��Ϊ����, Ȼ����һ���������� [start, end] ���߶�����
- * ÿ���ڵ���������������ֵ����������߶����ĸ���
- *
  */
 public class SegmemtTreeBuildII {
 
