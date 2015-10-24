@@ -21,7 +21,7 @@ import java.util.*;
  *
  * Note
  * All numbers (including target) will be positive integers.
- * Elements in a combination (a1, a2, ¡­ , ak) must be in non-descending order. (ie, a1 ¡Ü a2 ¡Ü ¡­ ¡Ü ak).
+ * Elements in a combination (a1, a2, ï¿½ï¿½ , ak) must be in non-descending order. (ie, a1 ï¿½ï¿½ a2 ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ak).
  * The solution set must not contain duplicate combinations.
  *
  */
@@ -51,9 +51,6 @@ public class CombinationSumII {
         }
     }
 
-    public static void main(String[] args) {
-        new CombinationSumII().combinationSum2(new int[]{10,1,6,7,2,1,5}, 8);
-    }
 
 
 }

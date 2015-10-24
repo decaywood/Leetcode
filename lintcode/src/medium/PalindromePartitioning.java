@@ -50,14 +50,6 @@ public class PalindromePartitioning {
         return true;
     }
 
-    public static void main(String[] args) {
-        List<List<String>> res = new PalindromePartitioning().partition("");
-        for (List<String> re : res) {
-            for (String s : re) {
-                System.out.print(s + ", ");
-            }
-            System.out.println();
-        }
-    }
+
 
 }

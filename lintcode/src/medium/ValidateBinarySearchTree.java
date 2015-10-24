@@ -40,9 +40,5 @@ public class ValidateBinarySearchTree {
         return res && isValidBST(root.left, left, root.val) && isValidBST(root.right, root.val, right);
     }
 
-    public static void main(String[] args) {
-        TreeNode node = TreeNode.generateTestCase("2,1");
-        new ValidateBinarySearchTree().isValidBST(node);
-    }
 
 }

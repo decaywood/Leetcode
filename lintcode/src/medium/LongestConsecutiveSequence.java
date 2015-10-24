@@ -68,8 +68,6 @@ public class LongestConsecutiveSequence {
         } else map.put(i, new Pair(i, i, 1));
     }
 
-    public static void main(String[] args) {
-        System.out.println(new LongestConsecutiveSequence().longestConsecutive(new int[]{3,1,4,1,5,9,2,6,5}));
-    }
+
 
 }

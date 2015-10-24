@@ -43,8 +43,5 @@ public class SubarraySumClosest {
 
     }
 
-    public static void main(String[] args) {
-        new SubarraySumClosest().subarraySumClosest(new int[]{6,-4,-8,3,1,7});
-    }
 
 }
