@@ -31,7 +31,7 @@ public class TreeNode {
     public TreeNode(int x) { val = x; }
 
     public static TreeNode generateTestCase(String testcase) {
-        int[] arr = Stream.of(testcase.split(",")).mapToInt(str -> str.equals("#") ? Integer.MIN_VALUE : Integer.parseInt(str)).toArray();
+        int[] arr = Stream.of(testcase.split(",")).mapToInt(str -> str.equals("null") ? Integer.MIN_VALUE : Integer.parseInt(str)).toArray();
         TreeNode root = new TreeNode(Integer.MAX_VALUE);
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
