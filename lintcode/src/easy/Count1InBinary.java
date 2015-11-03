@@ -28,7 +28,4 @@ public class Count1InBinary {
         return count;
     }
 
-    public static void main(String[] args) {
-        System.out.println(new Count1InBinary().countOnes(1023));
-    }
 }
