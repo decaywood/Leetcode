@@ -8,7 +8,7 @@ import java.util.List;
  * @author: decaywood
  * @date: 2015/9/7 12:23
  *
- * The n-queens puzzle is the problem of placing n queens on an n��n chessboard
+ * The n-queens puzzle is the problem of placing n queens on an n��n chessboard
  * such that no two queens attack each other.
  *
  * Given an integer n, return all distinct solutions to the n-queens puzzle.
@@ -39,24 +39,24 @@ public class NQueens {
 
     /**
      *
-     * �����̴洢Ϊһ��Nά����a[N]�������е�i��Ԫ�ص�ֵ������i�еĻʺ�λ�ã�
-     * ��������԰�����Ŀռ��ģѹ��ΪһάO(N)�����ж��Ƿ��ͻʱҲ�ܼ򵥣�����ÿ��ֻ��һ���ʺ�
-     * ����������ֻռ��һ��Ԫ�ص�λ�ã��г�ͻ�Ͳ������ˣ�������г�ͻ���ж�һ���Ƿ���a[i]�뵱ǰҪ���ûʺ����j��ȼ��ɡ�
-     * ����б�߳�ͻ��ͨ���۲���Է���������б���ϳ�ͻ�Ļʺ��λ�ö��й��ɼ��������ڵ����л����ľ���ֵ��ȣ�
-     * ��| row �C i | = | col �C a[i] | ������ĳ��λ���Ƿ���Է��ûʺ�������Ѿ������
+     * 把棋盘存储为一个N维数组a[N]，数组中第i个元素的值代表第i行的皇后位置，
+     * 这样便可以把问题的空间规模压缩为一维O(N)，在判断是否冲突时也很简单，首先每行只有一个皇后，
+     * 且在数组中只占据一个元素的位置，行冲突就不存在了，其次是列冲突，判断一下是否有a[i]与当前要放置皇后的列j相等即可。
+     * 至于斜线冲突，通过观察可以发现所有在斜线上冲突的皇后的位置都有规律即它们所在的行列互减的绝对值相等，
+     * 即| row – i | = | col – a[i] | 。这样某个位置是否可以放置皇后的问题已经解决。
      *
-     * α���룺
+     * 伪代码：
      *
      *    void queen(int row){
-     *        if (n == row)      //����Ѿ��ҵ���������ӡ���
+     *        if (n == row)      //如果已经找到结果，则打印结果
      *           print_result();
      *        else {
-     *           for (k=0 to N) { //��̽��row��ÿһ����
+     *           for (k=0 to N) { //试探第row行每一个列
      *               if (can_place(row, k) {
-     *                   place(row, k);   //���ûʺ�
-     *                   queen(row + 1);  //����̽����һ��
+     *                   place(row, k);   //放置皇后
+     *                   queen(row + 1);  //继续探测下一行
      *               } else {
-     *                   ��յ�ǰ�����̣�����
+     *                   清空当前行棋盘，回溯
      *               }
      *           }
      *        }

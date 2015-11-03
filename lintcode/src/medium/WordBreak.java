@@ -1,7 +1,5 @@
 package medium;
 
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -34,11 +32,5 @@ public class WordBreak {
         return canContinue[s.length()];
     }
 
-    public static void main(String[] args) {
-        Set<String> strings = new HashSet<>();
-        String[] s = new String[]{"bc","cd","de","fg","abcd","efg"};
-        Collections.addAll(strings, s);
-        System.out.println(new WordBreak().wordBreak("abcdefg", strings));
-    }
 
 }

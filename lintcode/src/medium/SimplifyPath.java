@@ -41,7 +41,4 @@ public class SimplifyPath {
         return builder.length() == 0 ? "/" : builder.toString();
     }
 
-    public static void main(String[] args) {
-        System.out.println(new SimplifyPath().simplifyPath("/home//foo/"));
-    }
 }

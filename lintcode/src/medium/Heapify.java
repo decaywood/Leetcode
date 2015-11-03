@@ -53,7 +53,4 @@ public class Heapify {
 
     private int right(int index){return (index << 1) + 2;}
 
-    public static void main(String[] args) {
-        new Heapify().heapify(new int[]{45,39,32,11});
-    }
 }
