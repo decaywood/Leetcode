@@ -1,5 +1,7 @@
 package medium;
 
+import dataStructure.SegmentTreeNode;
+
 /**
  * @author: decaywood
  * @date: 2015/10/15 11:07
@@ -38,17 +40,6 @@ package medium;
  */
 public class SegmemtTreeBuildII {
 
-
-    public class SegmentTreeNode {
-        public int start, end, max;
-        public SegmentTreeNode left, right;
-        public SegmentTreeNode(int start, int end, int max) {
-            this.start = start;
-            this.end = end;
-            this.max = max;
-            this.left = this.right = null;
-        }
-    }
 
     private SegmentTreeNode buildTreeNode(int[] A, int startIndex, int endIndex) {
         if(startIndex > endIndex) return null;
