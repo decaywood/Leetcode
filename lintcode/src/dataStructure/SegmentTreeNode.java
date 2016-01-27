@@ -5,7 +5,7 @@ package dataStructure;
  * @date: 2015/11/9 13:00
  */
 public class SegmentTreeNode {
-    public int start, end, sum;
+    public int start, end, sum, max;
     public SegmentTreeNode left, right;
 
     public SegmentTreeNode(int start, int end) {
